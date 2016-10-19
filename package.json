@@ -31,6 +31,7 @@
     "lob": "^3.9.0",
     "lodash": "^4.15.0",
     "lusca": "^1.4.1",
+    "mongo-express": "^0.31.5",
     "mongoose": "^4.6.0",
     "morgan": "^1.7.0",
     "multer": "^1.2.0",
