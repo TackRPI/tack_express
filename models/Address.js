@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const addressSchema = new mongoose.Schema({
   formatted: {
-    type: String
+    type: String,
+    required: true
   },
   streetAddress: {
     type: String,
@@ -26,7 +27,8 @@ const addressSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-addressSchema.pre('save', function(next) {
+// Sets 'formatted' attribute
+addressSchema.pre('validate', function(next) {
   this.formatted = `${this.streetAddress}\n${this.locality}, ${this.region} ${this.postalCode}\n${this.country}`;
   next();
 });

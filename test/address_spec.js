@@ -14,8 +14,7 @@ describe('Address', () => {
 
     address.save((err) => {
       expect(err).to.be.null;
-      expect(address.formatted).to.not.be.undefined;
-      expect(address.formatted).to.not.be.empty;
+      expect(address.formatted).to.equal('123 Main St.\nBellmore, NY 11710\nUnited States');
       expect(address.streetAddress).to.equal('123 Main St.');
       expect(address.locality).to.equal('Bellmore');
       expect(address.region).to.equal('NY');
